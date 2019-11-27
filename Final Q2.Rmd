@@ -80,7 +80,7 @@ A total of 678 of the 9975 of the females in the study got the Disease. Out of t
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-When it comes to females, it appears that the drug did make a significant difference in preventing the women participants from being infected with AIDS. The 252 poeple difference is not enough to state a deffinitive statistical success but when you look at the fact that twice as many women got the diseas while on the placebo than the females on drug.
+When it comes to females, it appears that the drug did make a significant difference in preventing the women participants from being infected with AIDS. The 252 poeple difference is not enough to state a deffinitive statistical success but when you look at the fact that twice as many women got the disease while on the placebo than those on the drug, it shows there must be some success in this drug in respect to this subgroup.
  
 The p-value is below 0.05 therfore we reject the null hypothesis. 
 

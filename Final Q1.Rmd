@@ -10,10 +10,6 @@ output: html_document
 require(tidyverse)
 require(tigerstats)
 avast <-read.csv(file="avastivironal.csv",header=TRUE)
-avastf <- filter(avast,sex=="gal")
-avastg <- filter(avast,LGBTQ=="gay")
-avastm <- filter(avast,sex=="guy")
-avasts <- filter(avast,LGBTQ=="straight")
 ```
 
 

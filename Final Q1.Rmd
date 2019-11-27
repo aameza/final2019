@@ -1,0 +1,99 @@
+---
+title: "Final Q1"
+author: "Abel Meza"
+date: "11/21/2019"
+output: html_document
+---
+
+
+```{r}
+require(tidyverse)
+require(tigerstats)
+avast <-read.csv(file="avastivironal.csv",header=TRUE)
+avastf <- filter(avast,sex=="gal")
+avastg <- filter(avast,LGBTQ=="gay")
+avastm <- filter(avast,sex=="guy")
+avasts <- filter(avast,LGBTQ=="straight")
+```
+
+
+# Introduction
+
+<!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
+
+A new  preventative aides (abacavirinol) is under test in clinical trials. Analyze the effectiveness of this drug across the board. Consider population subgroups by gender, drug use, and sexual orientation. Finish this! 
+
+Instructions: We are going to have 5 different pie square test, one for everybody, one for females, one for males, one for gays,and one for straight indviduals. 
+In the readme section on github you need to explain that you are going to do five different reports, to make five different cases in each of the reports. 
+ 
+Question: Determine how the drug should be working with respect to each subgroup. 
+
+## QUESTION 1 (Everyone)
+
+ How do we determine how the drug should be working with respect to the infected and the treatment group?
+ 
+ \(H_0\):There is no difference in the indivduals who are infected to AIDS and to those independent of their subgroup.
+
+\(H_A\):There is a statistical difference between the indivuals who a are infected to AIDS and to those independent to their subgroup
+
+
+# Methods
+
+We will be using both graphical descriptive and numerical descriptive results.
+The subgroups that are taking the AIDS preventive drug/placebo are men, women, straight, gay, and DrugUsers.
+
+<!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+#Results
+
+<!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
+
+## Descriptive Results
+
+### Graphical Descriptive Results
+
+<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+
+
+```{r}
+barchartGC(~infected + treatment,data=avast)
+barchartGC(~infected + treatment,data=avast,type="percent")
+```
+In this barchart we can see that about 40% or close to 500 of the people who got AIDS took the drug while 60% took the plecebo.
+
+The people who did not get AIDS are statiscally similar both at about 10,000 people. 
+ 
+### Numerical Descriptive Results
+
+<!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+table1 <- xtabs(~infected + treatment , data=avast)
+rowPerc(table1)
+colPerc(table1)
+```
+On this table we can see more accurately that 40.87% of the people who got AIDS took the drug compared to the 59.13% who took the placebo.
+
+This table also shows that 3.99% of the people of the over all who took the drug got AIDS compared to the 5.49% of people who took the placebo got the disease.
+## Inferential Results
+
+<!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+```
+A total of 1,035 of the 21,743 pf the poeple in the study got the Disease. Out of those people, 423 took the drug and 612 took the placebo.
+
+# Discussion and Conclusion
+
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+Overall, it appears that the drug did not make a significant difference in preventing the participants from being infected with AIDS. The 189 poeple difference is not enough to state a deffinitive statistical success.
+ 
+The p-value is below 0.05 therfore we reject the null hypothesis. 
+
+
+
+
+

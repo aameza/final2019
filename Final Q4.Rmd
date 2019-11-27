@@ -48,7 +48,7 @@ barchartGC(~infected + treatment,data=avastg,type="percent")
 
 In this barchart we can see that about 80% or close to 100 of the gay individuals who got AIDS took the drug while 20% took the plecebo.
 
-The males who did not get AIDS are statiscally similar both at about 50% of males.  
+The males who did not get AIDS are statiscally similar both at about 50% of gay individuals.  
 
 
 #### Numerical Descriptive Results

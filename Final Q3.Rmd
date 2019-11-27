@@ -72,13 +72,19 @@ This table also shows that 3.69% of the males of the over all who took the drug 
 chisq.test(table1)
 chisqtestGC(table1)
 ```
-A total of 357 of the 11768 of males in the study got the Disease. Out of those men, 213 took the drug and 465 took the placebo.
+A total of 357 of the 11768 of the males in the study got the Disease. Out of those men, 210 took the drug and 147 took the placebo.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-When it comes to males, it appears that the drug did not make a significant difference in preventing the male participants from being infected with AIDS. It appears the drug increased the chances of gettting the disease in males. We also see that less men became infected than females despite the fact that theres was more men in the study. 
+When it comes to males, it appears that the drug did not make a significant difference in preventing the men participants from being infected with AIDS. It appears the drug increased the chances of gettting the disease in males. We also see that less men became infected than females despite the fact that theres was more men in the study. 
+ 
+The p-value is below 0.05 therfore we reject the null hypothesis. 
+
+
+
+
  
 The p-value is below 0.05 therfore we reject the null hypothesis. 
 

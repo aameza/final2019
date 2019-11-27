@@ -1,0 +1,88 @@
+---
+title: "Final Q4"
+author: "Abel Meza"
+date: "11/26/2019"
+output: html_document
+---
+
+```{r}
+require(tidyverse)
+require(tigerstats)
+avast <-read.csv(file="avastivironal.csv",header=TRUE)
+avastg <- filter(avast,LGBTQ=="gay")
+```
+
+
+## QUESTION 4 (Gay Indivduals)
+
+<!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
+
+In question 4 our goal is to determine how the AID preventive drug should be working with respect to gay indivduals. 
+
+\(H_0\):There is no difference in the AID preventive drug that is independent to the LGBTQ of the gay indivduals.
+
+\(H_A\):There is a statistical difference between AID preventive drug  and to those independent to the LGBTQ of the gay indivduals. 
+
+## Methods
+
+<!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
+
+##Results
+
+<!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
+
+We will be using both graphical descriptive and numerical descriptive results.
+
+### Descriptive Results
+
+#### Graphical Descriptive Results
+
+<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+We use bar charts to compare Numerical vs Numerical data.
+
+```{r}
+barchartGC(~infected + treatment,data=avastg)
+barchartGC(~infected + treatment,data=avastg,type="percent")
+```
+
+In this barchart we can see that about 80% or close to 100 of the gay individuals who got AIDS took the drug while 20% took the plecebo.
+
+The males who did not get AIDS are statiscally similar both at about 50% of males.  
+
+
+#### Numerical Descriptive Results
+
+<!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+```{r}
+table1 <- xtabs(~infected + treatment, data=avastg)
+rowPerc(table1)
+colPerc(table1)
+```
+
+On this table we can see more accurately that 72.38% of the gay individuals who got AIDS took the drug compared to the 27.62% who took the placebo.
+
+This table also shows that 7.02% of the gay people of the over all who took the drug got AIDS compared to the 2.7% of gay individuals who took the placebo got the disease.
+
+### Inferential Results
+
+<!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+```
+A total of 105 of the 2158 of the gay indivuals in the study got the Disease. Out of those, 210 took the drug and 147 took the placebo.
+
+# Discussion and Conclusion
+
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+When it comes to gay individuals, it appears that the drug did not make a significant difference in preventing the participants from being infected with AIDS. It appears the drug increased the chances of gettting the disease in gay individuals.
+ 
+The p-value is below 0.05 therfore we reject the null hypothesis. 
+
+
+
+
+
+

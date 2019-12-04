@@ -1,7 +1,7 @@
 # final2019
 
 I use six R-markdown files to deal with each of the different subgroups.
-I answer the same question in regard to each subgroup in this order
+I answer the same questions in regard to each subgroup in this order
   1. Overall population
   2. Females
   3. Males
